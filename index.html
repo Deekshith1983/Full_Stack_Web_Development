@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Student">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete HTML Tags Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="main-header">
+        <h1>My HTML</h1>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#text">Text</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#tables">Tables</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="text">
+            <h2>Text Formatting</h2>
+
+            <p>This is a <strong>strong</strong> text.</p>
+            <p>This is <em>emphasized</em> text.</p>
+            <p>This is <mark>marked</mark> text.</p>
+            <p>This is <small>small</small> text.</p>
+            <p>This is <del>deleted</del> text.</p>
+            <p>This is <ins>inserted</ins> text.</p>
+            <p>H<sub>2</sub>O and X<sup>2</sup></p>
+
+            <pre>
+HTML preserves
+     spaces
+         and line breaks
+    </pre>
+
+            <blockquote cite="https://www.w3.org">
+                HTML is the standard markup language for Web pages.
+            </blockquote>
+
+            <q>Learning HTML is easy</q>
+
+            <p>The <abbr title="HyperText Markup Language">HTML</abbr> standard</p>
+
+            <address>
+                Written by John<br>
+                India
+            </address>
+
+            <bdo dir="rtl">Right to Left</bdo><br>
+            <bdo dir="ltr">Left to Right</bdo>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Lists</h2>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+            <ol type="I">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Styling Language</dd>
+            </dl>
+        </section>
+
+        <hr>
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <caption>Student Data</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alice</td>
+                        <td>HTML</td>
+                        <td>India</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td>CSS</td>
+                        <td>USA</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">End of Table</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <hr>
+        <section id="forms">
+            <h2>Forms</h2>
+
+            <form>
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    <label>Name:</label>
+                    <input type="text" required>
+                    <label>Email:</label>
+                    <input type="email">
+                    <label>Password:</label>
+                    <input type="password">
+                    <label>Age:</label>
+                    <input type="number">
+                    <label>DOB:</label>
+                    <input type="date">
+                    <label>Gender:</label>
+                    <input type="radio" name="gender"> Male
+                    <input type="radio" name="gender"> Female
+                    <label>Skills:</label>
+                    <input type="checkbox"> HTML
+                    <input type="checkbox"> CSS
+                    <label>Country:</label>
+                    <select>
+                        <option>India</option>
+                        <option>USA</option>
+                    </select>
+                    <label>Message:</label>
+                    <textarea rows="4"></textarea>
+                    <input type="submit">
+                    <input type="reset">
+                </fieldset>
+            </form>
+        </section>
+
+        <hr>
+        <section>
+            <h2>Interactive & Semantic</h2>
+            <details>
+                <summary>Click to expand</summary>
+                <p>Hidden content revealed</p>
+            </details>
+            <progress value="70" max="100"></progress><br>
+            <meter value="0.6"></meter><br>
+            <dialog open style="background-color: none;">
+                <p>This is a dialog box</p>
+            </dialog>
+            <br><br>
+            <button id="click-button" onclick="alert('Hello!')">Click Me</button>
+        </section>
+
+    </main>
+
+    <section id="media">
+        <h2>Media Elements</h2>
+        <audio controls>
+            <source src="sample.mp3" type="audio/mpeg">
+        </audio>
+        <video width="320" height="240" controls>
+            <source src="sample.mp4" type="video/mp4">
+        </video>
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+    </section>
+
+    <aside>
+        <h3>Side Content</h3>
+        <p>This is aside content</p>
+    </aside>
+
+
+    <footer>
+        <p>&copy; 2026 HTML Practice</p>
+        <a id="contact-link" href="mailto:test@example.com">Contact</a>
+    </footer>
+
+
+</body>
+
+</html>
