@@ -1,159 +1,194 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-    <title>HI hello</title>
     <meta charset="UTF-8">
+    <meta name="author" content="Student">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete HTML Tags Demo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body background="fog-nature-forest-woods-india.jpg" opacity="0.5" style="color:red;">
-    <div>
-        <header>
-            <h2>Header Section</h2>
-        </header>
+<body>
+    <header id="main-header">
+        <h1>My HTML</h1>
+    </header>
 
-        <nav>
-            <a href="#">Home</a> |
-            <a href="#">About</a>
-        </nav>
-    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#text">Text</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#tables">Tables</a></li>
+        </ul>
+    </nav>
 
-    <h1>Travel Guide</h1>
 
-    <h2>Europe</h2>
-    <h3>France</h3>
-    <hr>
-    <h3>Italy</h3>
+    <main>
+        <section id="text">
+            <h2>Text Formatting</h2>
 
-    <h2>Asia</h2>
-    <h3>India</h3>
-    <h3>Thailand</h3>
+            <p>This is a <strong>strong</strong> text.</p>
+            <p>This is <em>emphasized</em> text.</p>
+            <p>This is <mark>marked</mark> text.</p>
+            <p>This is <small>small</small> text.</p>
+            <p>This is <del>deleted</del> text.</p>
+            <p>This is <ins>inserted</ins> text.</p>
+            <p>H<sub>2</sub>O and X<sup>2</sup></p>
 
-    <p title="I'm a tooltip">This is a <br> paragraph.</p>
-
-    <a href="https://www.google.com">Google</a>
-
-    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo"
-        onclick="window.location.href='https://www.google.com';" width="70%" height="auto">
-
-    <p>
-        This paragraph
-        contains a lot of spaces
-        in the source code,
-        but the browser
-        ignores it.
-    </p>
-
-    <p>This is<br>a paragraph<br>with line breaks.</p>
-
-    <p>
-        My Bonnie lies over the ocean.
-        My Bonnie lies over the sea.
-        My Bonnie lies over the ocean.
-        Oh, bring back my Bonnie to me.
-    </p>
-
-    <pre>
-<b>i am a student</b>
-<i>i am a student</i>
-<strong>i am a student</strong>
-<em>i am a student</em>
-<mark>i am a student</mark>
-<small>i AM a student</small>
-<del>i am a student</del>
-<ins>i am a student</ins>
-<u>i am a student</u>
-<sub>i am a student</sub>
-<sup>i am a student</sup>
+            <pre>
+HTML preserves
+     spaces
+         and line breaks
     </pre>
-    <blockquote cite="https://www.worldwildlife.org/">
-        The world is a beautiful place and needs protection.
-    </blockquote>
 
-    <p>The <abbr title="World Wildlife Fund">WWF</abbr> works for nature.</p>
+            <blockquote cite="https://www.w3.org">
+                HTML is the standard markup language for Web pages.
+            </blockquote>
 
-    <address>
-        Written by Student<br>
-        India
-    </address>
+            <q>Learning HTML is easy</q>
 
-    <bdo dir="rtl">Right to left text</bdo><br>
-    <bdo dir="ltr">Left to right text</bdo><br>
+            <p>The <abbr title="HyperText Markup Language">HTML</abbr> standard</p>
 
-    <a href="mailto:someone@example.com">Send Email</a><br>
+            <address>
+                Written by John<br>
+                India
+            </address>
 
-    <button onclick="alert('Hello!')">Click me</button><br><br>
-    <picture>
-        <source media="(min-width: 150%)" srcset="fog-nature-forest-woods-india.jpg">
-        <source media="(min-width: 150%)" srcset="fog-nature-forest-woods-india.jpg">
-        <img src="fog-nature-forest-woods-india.jpg" alt="Google Logo" width="70%" height="auto.">
-    </picture>
+            <bdo dir="rtl">Right to Left</bdo><br>
+            <bdo dir="ltr">Left to Right</bdo>
+        </section>
 
-    <table border="1">
-        <caption>My First Table</caption>
-        <tr>
-            <th>Company</th>
-            <th>Country</th>
-        </tr>
-        <tr>
-            <td>ABC</td>
-            <td>Germany</td>
-        </tr>
-    </table>
+        <hr>
 
-    <ul type="square">
-        <li>Coffee</li>
-        <li>Tea</li>
-    </ul>
+        <section>
+            <h2>Lists</h2>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+            <ol type="I">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Styling Language</dd>
+            </dl>
+        </section>
 
-    <ol type="A" start="4">
-        <li>HTML</li>
-        <li>Git</li>
-    </ol>
+        <hr>
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <caption>Student Data</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alice</td>
+                        <td>HTML</td>
+                        <td>India</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td>CSS</td>
+                        <td>USA</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">End of Table</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
 
-    <dl>
-        <dt>HTML</dt>
-        <dd type="definition">Markup language</dd>
-    </dl>
+        <hr>
+        <section id="forms">
+            <h2>Forms</h2>
 
-    <div>
-        <h2>London</h2>
-        <p>Capital of England</p>
-    </div>
+            <form>
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    <label>Name:</label>
+                    <input type="text" required>
+                    <label>Email:</label>
+                    <input type="email">
+                    <label>Password:</label>
+                    <input type="password">
+                    <label>Age:</label>
+                    <input type="number">
+                    <label>DOB:</label>
+                    <input type="date">
+                    <label>Gender:</label>
+                    <input type="radio" name="gender"> Male
+                    <input type="radio" name="gender"> Female
+                    <label>Skills:</label>
+                    <input type="checkbox"> HTML
+                    <input type="checkbox"> CSS
+                    <label>Country:</label>
+                    <select>
+                        <option>India</option>
+                        <option>USA</option>
+                    </select>
+                    <label>Message:</label>
+                    <textarea rows="4"></textarea>
+                    <input type="submit">
+                    <input type="reset">
+                </fieldset>
+            </form>
+        </section>
 
-    <p>
-        My mother has <span>blue</span> eyes and my father has <span>green</span> eyes.
-    </p>
+        <hr>
+        <section>
+            <h2>Interactive & Semantic</h2>
+            <details>
+                <summary>Click to expand</summary>
+                <p>Hidden content revealed</p>
+            </details>
+            <progress value="70" max="100"></progress><br>
+            <meter value="0.6"></meter><br>
+            <dialog open style="background-color: none;">
+                <p>This is a dialog box</p>
+            </dialog>
+            <br><br>
+            <button id="click-button" onclick="alert('Hello!')">Click Me</button>
+        </section>
 
+    </main>
 
-
-    <section>
-        <article>
-            <h3>Article Tag</h3>
-            <p>This is inside article.</p>
-        </article>
+    <section id="media">
+        <h2>Media Elements</h2>
+        <audio controls>
+            <source src="sample.mp3" type="audio/mpeg">
+        </audio>
+        <video width="320" height="240" controls>
+            <source src="sample.mp4" type="video/mp4">
+        </video>
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
     </section>
 
-    <details>
-        <summary>More Info</summary>
-        <p>This text is hidden by default.</p>
-    </details>
+    <aside>
+        <h3>Side Content</h3>
+        <p>This is aside content</p>
+    </aside>
 
-    <progress value="60" max="200"></progress><br>
 
-    <meter value="0.7">70%</meter>
+    <footer>
+        <p>&copy; 2026 HTML Practice</p>
+        <a id="contact-link" href="mailto:test@example.com">Contact</a>
+    </footer>
 
-    <form>
-        <label>Name:</label>
-        <input type="text"><br>
-        <label>Email:</label>
-        <input type="email"><br>
-        <input type="submit">
-    </form>
-        <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-    </iframe>
 
 </body>
 
