@@ -1,185 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Bootstrap Webpage</title>
+    <title>MyWebsite | Bikes & Cars</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            min-height: 100vh;
-            background: linear-gradient(120deg, #ff00cc, #3333ff, #00ffcc);
-            background-size: 400% 400%;
-            animation: bg 12s ease infinite;
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
-        }
-
-        @keyframes bg {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            text-shadow: 0 0 20px cyan;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-        }
-
-        .card {
-            border-radius: 20px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            color: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.4);
-            transition: transform 0.5s, box-shadow 0.5s;
-        }
-
-        .card:hover {
-            transform: scale(1.08) rotate(-2deg);
-            box-shadow: 0 0 60px cyan;
-        }
-
-        .crazy-text {
-            animation: glow 1.5s infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px white; }
-            to { text-shadow: 0 0 25px yellow; }
-        }
-
-        .gallery img {
-            border-radius: 20px;
-            transition: transform 0.4s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        footer {
-            background: rgba(0,0,0,0.6);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 10px magenta; }
-            50% { box-shadow: 0 0 40px cyan; }
-            100% { box-shadow: 0 0 10px magenta; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand crazy-text" href="#"> WEB</a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <a class="navbar-brand" href="#">MyWebsite</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="mainNav">
+        <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bikes">Bikes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#cars">Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<section class="hero">
-    <div>
-        <h1 class="crazy-text">Welcome to Chaos</h1>
-        <p>A full webpage using only HTML, CSS and Bootstrap</p>
-        <button class="btn btn-warning btn-lg mt-3">Enter</button>
+<section id="home" class="hero">
+    <div class="container text-center">
+        <h1>Driven by Passion</h1>
+        <p>Exploring bikes and cars through design and performance</p>
+        <button class="btn btn-light btn-lg mt-3" id="exploreBtn">Explore</button>
     </div>
 </section>
 
-<section class="container py-5">
+<section id="bikes" class="container py-5">
+    <h2 class="section-title text-center">Bikes</h2>
     <div class="row g-4">
         <div class="col-md-4">
-            <div class="card p-4 text-center">
-                <h3>Speed</h3>
-                <p>Fast layouts with Bootstrap grid and utilities</p>
+            <div class="card">
+                <img src="https://picsum.photos/500/300?bike" class="vehicle-img">
+                <div class="card-body text-center">
+                    <h5>Sport Bike</h5>
+                    <p>Speed focused performance machines</p>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card p-4 text-center">
-                <h3>Design</h3>
-                <p>Glassmorphism, glow and animations</p>
+            <div class="card">
+                <img src="https://picsum.photos/500/300?motorcycle" class="vehicle-img">
+                <div class="card-body text-center">
+                    <h5>Cruiser</h5>
+                    <p>Comfort and long distance riding</p>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card p-4 text-center">
-                <h3>Fun</h3>
-                <p>Crazy effects without JavaScript</p>
+            <div class="card">
+                <img src="https://picsum.photos/500/300?adventure" class="vehicle-img">
+                <div class="card-body text-center">
+                    <h5>Adventure</h5>
+                    <p>Built for off-road and touring</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container py-5 gallery">
-    <h2 class="text-center text-white mb-4 crazy-text">Gallery</h2>
+<section id="cars" class="container py-5">
+    <h2 class="section-title text-center">Cars</h2>
     <div class="row g-4">
         <div class="col-md-4">
-            <img src="https://picsum.photos/400/300?1" class="img-fluid">
+            <div class="card">
+                <img src="https://picsum.photos/500/300?car" class="vehicle-img">
+                <div class="card-body text-center">
+                    <h5>Sports Car</h5>
+                    <p>High performance and aerodynamics</p>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <img src="https://picsum.photos/400/300?2" class="img-fluid">
+            <div class="card">
+                <img src="https://picsum.photos/500/300?suv" class="vehicle-img">
+                <div class="card-body text-center">
+                    <h5>SUV</h5>
+                    <p>Powerful and family friendly</p>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <img src="https://picsum.photos/400/300?3" class="img-fluid">
+            <div class="card">
+                <img src="https://picsum.photos/500/300?electric" class="vehicle-img">
+                <div class="card-body text-center">
+                    <h5>Electric</h5>
+                    <p>Clean and future-ready vehicles</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="container py-5">
+<section id="about" class="container py-5">
+    <h2 class="section-title text-center">About This Site</h2>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card p-4">
-                <h3 class="text-center">Contact Us</h3>
-                <input class="form-control mb-3" placeholder="Name">
-                <input class="form-control mb-3" placeholder="Email">
-                <textarea class="form-control mb-3" rows="3" placeholder="Message"></textarea>
-                <button class="btn btn-success w-100">Send</button>
+        <div class="col-md-8">
+            <div class="info-box">
+                <p>
+                    This website is a practice project to demonstrate continuous learning in
+                    HTML, CSS, JavaScript, and Bootstrap by building a structured automotive-themed site.
+                </p>
+                <div class="progress mt-3">
+                    <div class="progress-bar bg-success" style="width: 80%">HTML</div>
+                </div>
+                <div class="progress mt-3">
+                    <div class="progress-bar bg-info" style="width: 70%">CSS</div>
+                </div>
+                <div class="progress mt-3">
+                    <div class="progress-bar bg-warning" style="width: 60%">JavaScript</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Bootstrap Webpage</p>
+    <p>© 2026 MyWebsite | Bikes & Cars</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

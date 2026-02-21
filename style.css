@@ -1,0 +1,64 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.navbar {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.section-title {
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.vehicle-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 18px 18px 0 0;
+}
+
+.info-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+footer {
+    background-color: #212529;
+    color: #bbb;
+    padding: 25px 0;
+    text-align: center;
+}
