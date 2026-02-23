@@ -1,28 +1,22 @@
 body {
     font-family: "Segoe UI", sans-serif;
-    background-color: #f4f6f9;
     color: #333;
-}
-
-.navbar {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 0;
 }
 
 .hero {
-    min-height: 90vh;
-    background: linear-gradient(135deg, #000428, #004e92);
-    color: white;
+    height: 100vh;
     display: flex;
     align-items: center;
 }
 
 .hero h1 {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-weight: 600;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     opacity: 0.9;
 }
 
@@ -34,7 +28,7 @@ body {
 .card {
     border: none;
     border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
 }
 
@@ -53,11 +47,11 @@ body {
     background: white;
     padding: 30px;
     border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 footer {
-    background-color: #212529;
+    background-color: rgba(0,0,0,0.85);
     color: #bbb;
     padding: 25px 0;
     text-align: center;
