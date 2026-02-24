@@ -2,7 +2,30 @@ body {
     font-family: "Segoe UI", sans-serif;
     color: #333;
     margin: 0;
+    /* animation: anim1 20s ease-in-out infinite; */
 }
+
+.navbar{
+    opacity: 0.78;
+}
+
+/* @keyframes anim1 {
+    0%{
+        background-color: cyan;
+    }
+    25%{
+        background-color: magenta;
+    }
+    50%{
+        background-color: silver;
+    }
+    75%{
+        background-color: gold;
+    }
+    100%{
+        background-color: royalblue;
+    }
+} */
 
 .hero {
     height: 100vh;
@@ -33,7 +56,7 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-14px);
 }
 
 .vehicle-img {
@@ -56,3 +79,13 @@ footer {
     padding: 25px 0;
     text-align: center;
 }
+
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+

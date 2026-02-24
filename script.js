@@ -1,16 +1,15 @@
-VANTA.NET({
-    el: "#vanta-bg",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.0,
-    minWidth: 200.0,
-    scale: 1.0,
-    scaleMobile: 1.0,
-    color: 0xffffff,
-    backgroundColor: 0x0a0a0a,
-    points: 10.0,
-    maxDistance: 20.0,
-    spacing: 18.0
-});
 
+
+VANTA.BIRDS({
+  el: "#vanta-bg",
+   mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color1: 0xac3737,
+  color2: 0x1dca2d,
+  backgroundAlpha: 0.00
+})
