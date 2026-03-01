@@ -157,3 +157,5 @@ reversednum = sortednum.toReversed(); // This method returns a new array with th
 console.log(sortednum);
 console.log(reversednum);
 
+
+

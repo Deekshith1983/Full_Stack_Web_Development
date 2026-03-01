@@ -89,3 +89,47 @@ footer {
     z-index: -1;
 }
 
+#myButton1{
+    background-color:blue;
+    color:white;
+    border:1px solid black;
+}
+#myButton2{
+    background-color:magenta;
+    color:white;
+    border:1px solid black;
+}
+#myButton1:hover,#myButton2:hover{
+    background-color:cyan;
+    color:black;
+    border:1px solid black;
+}
+
+.box1{
+    width: 200px;;
+    height:auto;
+    background-color:lightblue;
+    padding:16px;
+    border:1px solid black;
+}
+.box2{
+    width: 150px;
+    height: 150px;
+    background-color:lightgreen;
+    padding:16px;
+    border:1px solid black;
+}
+
+#myButton3{
+    background-color:green;
+    color:white;
+    border:1px solid black;
+    align-items: center;
+}
+
+#cdemo{
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    text-shadow: 2px 2px 4px #000000;
+}

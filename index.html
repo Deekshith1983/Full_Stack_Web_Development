@@ -19,9 +19,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">MyWebsite</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto ">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
@@ -45,7 +42,7 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="Assets/SPorts bike.webp" class="vehicle-img">
+                    <img src="Assets/SPorts bike.webp" class="vehicle-img" alt="sport bike">
                     <div class="card-body text-center">
                         <h5>Sport Bike</h5>
                         <p>High-performance racing motorcycles</p>
@@ -55,7 +52,7 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <img src="Assets/Cruiser bike.webp" class="vehicle-img">
+                    <img src="Assets/Cruiser bike.webp" class="vehicle-img" alt="cruiser bike">
                     <div class="card-body text-center">
                         <h5>Cruiser Bike</h5>
                         <p>Comfort-focused long distance rides</p>
@@ -65,7 +62,7 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <img src="Assets/Adventure bike.webp" class="vehicle-img">
+                    <img src="Assets/Adventure bike.webp" class="vehicle-img" alt="adventure bike">
                     <div class="card-body text-center">
                         <h5>Adventure Bike</h5>
                         <p>Built for touring and off-road terrain</p>
@@ -80,7 +77,7 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" class="vehicle-img">
+                    <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" class="vehicle-img" alt="sports car">
                     <div class="card-body text-center">
                         <h5>Sports Car</h5>
                         <p>Precision engineering and speed</p>
@@ -90,7 +87,7 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <img src="Assets/SUV.webp" class="vehicle-img">
+                    <img src="Assets/SUV.webp" class="vehicle-img" alt="SUV">
                     <div class="card-body text-center">
                         <h5>SUV</h5>
                         <p>Powerful, spacious, and versatile</p>
@@ -100,7 +97,7 @@
 
             <div class="col-md-4">
                 <div class="card">
-                    <img src="Assets/Eletric.webp" class="vehicle-img">
+                    <img src="Assets/Eletric.webp" class="vehicle-img" alt="Electric Car">
                     <div class="card-body text-center">
                         <h5>Electric Car</h5>
                         <p>Future-ready and eco-friendly</p>
@@ -416,8 +413,64 @@
     </form>
 
     <!-- Form section end -->
+     <!-- JS Events -->
+    <hr>
+    <h1>JavaScript Events</h1>
+    <div class="container-fluid content-justify-centre">
+    <h3>Mouse events</h3>
+    <!-- Mouse events -->
+        <!-- click Event -->
+            <!-- Onclick -->
+                <button id="myButton1" onclick="alert('Hello Server!')">Click Me!</button><br><br>
+            <!-- ondlclick -->
+                <button id="myButton2" ondblclick="alert('Hello my Server!')">Double Click Me!</button>
+        <!-- mouseover and mouseoutevent -->
+            <div class="box1 container-fluid content-justify-centre mt-3"> move the mouse over me!</div>
+        <!-- mousemove event -->
+            <div class="box2 container-fluid content-justify-centre mt-3">Move the mouse over me to see coordinates!</div>
+        <!-- mouseup and mousedown event -->
+            <button id="myButton3" onclick="Press()">Press and Release Me!</button>
+    </div>
+
+    <div class="container-fluid mt-4">
+        <!-- Keyboard events  -->
+        <h3>Keyboard events</h3>
+        <!-- onkeydown event -->
+            <input type="text" id="myInput1" onkeydown="keydown()" placeholder="Press any key...">
+            <p id="demo"></p>
+        <!-- keyup event -->
+            <input type="text" id="myInput2" onkeyup="keyup()" placeholder="Release any key...">
+            <p id="demo2"></p>
+        <!-- keypress event -->
+            <input type="text" id="myInput3" onkeypress="keypress()" placeholder="Press and hold any key...">
+            <p id="demo3"></p>
+    </div>
+
+    <div class="container-fluid">
+        <!-- load event -->
+        <h3>Load event</h3>
+        <!-- load -->
+        <button id="loadButton" onclick="load()">Load Content</button>
+        <p id="loadDemo"></p>
+        <!-- DOMcontentLoad -->
+        <p id="domDemo"></p>
+    </div>
+
+    <div class="container-fluid">
+        <!-- Timing events -->
+        <h3>Timing Events</h3>
+         <p id="cdemo"></p>
+         <script>
+            setInterval(showtime, 1000);
+             function showtime() {
+                const d = new Date();
+                document.getElementById("cdemo").innerHTML = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+             }
+         </script> 
+        </div>
 
 
+    
 
     <footer class="mt-4">
         <p>© 2026 MyWebsite | Bikes & Cars</p>
