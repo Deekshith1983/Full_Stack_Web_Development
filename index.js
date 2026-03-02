@@ -157,5 +157,110 @@ reversednum = sortednum.toReversed(); // This method returns a new array with th
 console.log(sortednum);
 console.log(reversednum);
 
+//its about map and reduce
+// the map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+arr1=[4,5,7,8,9,6]
+var func=function greet(){
+    var arr2=arr1.map((num)=>{
+        console.log(num);
+    })
+}
+
+console.log(func());// at last undefined is printed because the function does not return anything, so it returns undefined by default.
+
+//reduce() function
+var arr3=arr1.reduce((accumulator,currentValue)=>{  //this acts as a sum function or like a normal for loop.
+    return accumulator+currentValue; 
+},0)// here 0 is the initial value of the accumulator
+console.log(arr3);
+
+//JSON Documents
+car={
+    name:"Toyota",
+    model:"Camry",
+    year:2020,
+    color:"Red"
+}
+
+console.log(car.name);
+//updating a property of the object
+car.name="Honda";
+console.log(car);
+car.gears=["Park", "Reverse", "Neutral", "Drive"];
+// console.log(car);
+console.log(car.gears[2]);
+//remove a property from the object
+delete car.color;
+console.log(car);
+//length of the object
+console.log(Object.keys(car).length);
+//object is mentioned in the Object.keys() method because it returns an array of a given object's own enumerable property names, and we can use the length property of that array to get the number of properties in the object.
+
+//different ways to create an object
+// 1. Using Object Literal
+let person1 = {
+    name: "Alice",
+    age: 25,
+    city: "New York"
+};
+console.log(person1);
+
+// 2. Using Object Constructor
+let person2 = new Object();
+person2.name = "Bob";
+person2.age = 30;
+person2.city = "Los Angeles";
+console.log(person2);
+
+// 3. Using Object.create() method
+let person3 = Object.create(person1);//here person3 inherits the properties of person1.
+person3.name = "Charlie";
+person3.age = 35;
+person3.city = "Chicago";
+console.log(person3);
+
+//4. Using a Class (ES6)
+class Person {
+    constructor(name, age, city) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+}
+
+let person4 = new Person("David", 40, "Houston");
+console.log(person4);
+
+//5. Using a Factory Function
+function createPerson(name, age, city) {
+    return {
+        name: name,
+        age: age,
+        city: city
+    };
+}
+let person5 = createPerson("Eve", 45, "Phoenix");
+console.log(person5);
+
+//json datatypes
+// string, number, boolean, array, object, null
+let jsonData = {
+    name: "John Doe",
+    age: 30,
+    isStudent: false,
+    hobbies: ["reading", "swimming", "coding"],
+    address: {
+        street: "123 Main St",
+        city: "New York",
+        zipCode: "10001"
+    }
+};
+console.log(jsonData.hobbies);
+console.log(jsonData.address.city);
+jsonData.address.zipCode = "10002"; // Updating a nested property
+console.log(jsonData.address.zipCode);
+for(let i=0;i<Object.keys(jsonData).length;i++){
+    console.log(typeof Object.values(jsonData)[i]);
+}
 
 
