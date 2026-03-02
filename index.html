@@ -450,23 +450,29 @@
         <!-- load event -->
         <h3>Load event</h3>
         <!-- load -->
-        <button id="loadButton" onclick="load()">Load Content</button>
-        <p id="loadDemo"></p>
+        <button id="loadButton" class="btn btn-primary" onclick="load()">Load Content</button>
+        <p id="loadDemo" class="mt-2"></p>
         <!-- DOMcontentLoad -->
-        <p id="domDemo"></p>
+        <p id="domDemo" class="mt-2"></p>
+        <!-- Window load event -->
+        <p id="windowLoadDemo" class="mt-2"></p>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <!-- Timing events -->
         <h3>Timing Events</h3>
-         <p id="cdemo"></p>
-         <script>
-            setInterval(showtime, 1000);
-             function showtime() {
-                const d = new Date();
-                document.getElementById("cdemo").innerHTML = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
-             }
-         </script> 
+        <!-- Clock with setInterval -->
+        <p id="cdemo" class="fw-bold fs-4"></p>
+        
+        <!-- setTimeout example -->
+        <button id="timeoutBtn" class="btn btn-warning" onclick="startTimeout()">Start Timeout (3 seconds)</button>
+        <button id="clearTimeoutBtn" class="btn btn-danger" onclick="stopTimeout()">Cancel Timeout</button>
+        <p id="timeoutDemo" class="mt-2"></p>
+        
+        <!-- setInterval example -->
+        <button id="startCounterBtn" class="btn btn-success" onclick="startCounter()">Start Counter</button>
+        <button id="stopCounterBtn" class="btn btn-danger" onclick="stopCounter()">Stop Counter</button>
+        <p id="counterDemo" class="mt-2 fw-bold">Counter: 0</p>
         </div>
 
 
