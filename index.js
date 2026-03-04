@@ -49,16 +49,6 @@ let sym = Symbol("unique"); // Symbol
 
 console.log(str, num, bool, arr, obj, undef, nul, sym);
 
-// Arithemteic Operators
-let a = 10;
-let b = 5;
-console.log(a + b); // Addition
-console.log(a - b); // Subtraction
-console.log(a * b); // Multiplication
-console.log(a / b); // Division
-console.log(a % b); // Modulus
-console.log(a ** b); // Exponentiation
-
 //Block scope
 {
     let blockVariable = "I am inside a block";
@@ -89,12 +79,6 @@ console.log(y1); // This will print 20, not 30
 let car = "";
 console.log(typeof car); // This will print "string" because an empty string is still considered a string data type in JavaScript.
 
-
-// Comparison Operator
-let num1 = 10;
-let num2 = "10";
-console.log(num1 == num2); // This will print true because '==' performs type coercion and considers them equal
-console.log(num1 === num2); // This will print false because '===' checks for both value and type, and they are not the same type (number vs string)
 
 // String Comaprison
 let str1 = "A";
@@ -297,3 +281,123 @@ function sum(...numbers){
     console.log(numbers); // This will print the array of numbers passed as arguments
 }
 sum(1,2,3,4,5);
+
+// Arithemteic Operators
+let a = 10;
+let b = 5;
+console.log(a + b); // Addition
+console.log(a - b); // Subtraction
+console.log(a * b); // Multiplication
+console.log(a / b); // Division
+console.log(a % b); // Modulus
+console.log(a ** b); // Exponentiation
+
+//unary Operators
+let d='10';
+console.log(+d); // Unary plus (converts the string '10' to the number 10)
+let c = 10;
+console.log(-c); // Unary negation
+console.log(++c); // Increment operator (prefix)
+console.log(c++); // Increment operator (postfix)
+console.log(c); // This will print the value of c after the increment operations
+console.log(--c); // Decrement operator (prefix)
+console.log(c--); // Decrement operator (postfix)
+console.log(c); // This will print the value of c after the decrement operations
+
+
+//Assignment Operators
+let z = 10;
+z += 5; // This is equivalent to z = z + 5
+console.log(z);
+z -= 3; // This is equivalent to z = z - 3
+console.log(z);
+z *= 2; // This is equivalent to z = z * 2
+console.log(z);
+z /= 4; // This is equivalent to z = z / 4
+console.log(z);
+z %= 3; // This is equivalent to z = z % 3
+console.log(z);
+z **= 2; // This is equivalent to z = z ** 2
+console.log(z);
+
+//Logical Operators
+let p = true;
+let q = false;
+console.log(p && q); // Logical AND
+console.log(p || q); // Logical OR
+console.log(!p); // Logical NOT
+console.log((5>3) && (2<4));
+console.log((5>3) || (2>4));
+
+//bitwise operators
+let m = 5; // In binary: 0101
+let n = 3; // In binary: 0011
+console.log(m & n);// Bitwise AND
+console.log(m | n);// Bitwise OR
+console.log(m ^ n);// Bitwise XOR
+console.log(~m);// Bitwise NOT
+console.log(m << 1);// Bitwise Left Shift 
+console.log(m >> 1);// Bitwise Right Shift 
+
+// Comparison Operators
+let num1 = 10;
+let num2 = "10";
+console.log(num1 == num2);// checks only value 
+console.log(num1 === num2); // checks both value and type
+console.log(num1 != num2); // checks only value
+console.log(num1 !== num2);  // checks both value and type
+console.log(num1 > 5); 
+console.log(num1 < 15); 
+console.log(num1 >= 10);
+console.log(num1 <= 10);
+console.log(num1 > num2); // This will print false because when comparing a number and a string, JavaScript converts the string to a number if possible.
+
+
+//Ternary Operator
+let Human_age = 18;
+let canVote = (Human_age >= 18) ? "Yes, you can vote." : "No, you cannot vote.";
+console.log(canVote);
+
+
+//conditional statements
+// if-else statement
+let score = 85;
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else if (score >= 60) {
+    console.log("Grade: D");
+} else {
+    console.log("Grade: F");
+}
+
+//switch statement
+let day = 3;    
+switch (day) {
+    case 1:
+        console.log("Monday");  
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");   
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case 6:         
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:
+        console.log("Invalid day");
+}
