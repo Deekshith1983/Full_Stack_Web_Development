@@ -401,3 +401,57 @@ switch (day) {
     default:
         console.log("Invalid day");
 }
+
+
+//loops
+//for loop
+for(let i=0;i<5;i++){
+    console.log(i);
+}
+
+//for of loop
+let array1=[10,20,30,40,50];
+for(let element of array1){
+    console.log(element);
+}
+
+//for in loop
+let obj3={
+    name:"Alice",
+    age:25,
+    city:"New York"
+}
+for(let key in obj3){
+    console.log(`${key}: ${obj[key]}`);
+}
+
+//while loop
+let count=0;
+while(count<5){
+    console.log(count);
+    count++;
+}
+
+//forEach loop
+let numberssm=[1,2,3,4,5];
+numberssm.forEach((num)=>{
+    console.log(num);
+});
+
+//call back function using for loop
+function printSquare(num){
+    console.log(num*num);
+}
+let nums=[1,2,3,4,5];
+nums.forEach(printSquare);
+
+//call back function using for loop as arrow function
+let nums5=[7,9,11,13,15];
+nums5.forEach((num)=>{
+    console.log(num*num);
+});
+
+
+
+
+
