@@ -1,12 +1,14 @@
 [
   {
-    "name": "H M Thimayya",
+    "employee_id": "IBMDS78954612",
+    "firstname": "Alexander",
+    "lastname": "Inferno",
     "email": "thimayya@gmail.com",
-    "password": "",
     "address": "2nd main,7th,cross, Gurumurthy Nagar",
-    "address2": "22, Bagewadi",
-    "city": "Belgaum",
-    "state": "Karnataka",
-    "zip": "578641"
+    "mobile_number": "7984562134",
+    "telephone_number": "",
+    "city": "Peroria",
+    "state": "Illinois",
+    "zip": "62584"
   }
 ]

@@ -1,0 +1,31 @@
+#vanta-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes anim1{
+    0%{
+        background-color: cyan;
+    }
+    50%{
+        background-color: magenta;
+    }
+    100%{
+        background-color: cyan;
+    }
+}
+
+#vanta-bg{
+    animation: anim1 10s ease-in-out infinite;
+}
+
+h1{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 65px;
+    font-family:'Times New Roman', Times, serif;
+}
