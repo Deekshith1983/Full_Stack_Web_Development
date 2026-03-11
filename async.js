@@ -143,8 +143,8 @@ async function calci(a, b) {
     });
 }
 
-let result = await calci(5, 10);
-console.log(result);
+let result4 = await calci(5, 10);
+console.log(result4);
 // async and await is used to handle promises in a more elegant way. It allows us to write asynchronous code in a synchronous manner. The await keyword is used to wait for a promise to resolve and it can only be used inside an async function.
 //if we use async and doesn't use await we'll get promise as pending beacuse async only returns the promise but await actually returns the value.
 
