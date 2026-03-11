@@ -10,5 +10,17 @@
     "city": "Peroria",
     "state": "Illinois",
     "zip": "62584"
+  },
+  {
+    "employee_id": "IBM457812",
+    "firstname": "Jhon",
+    "lastname": "Doe",
+    "email": "jhondoe@gmail.com",
+    "address": "12 main street near columbasia Hospital",
+    "mobile_number": "789546243",
+    "telephone_number": "08078451296",
+    "city": "West LA",
+    "state": "Alaska",
+    "zip": "65472"
   }
 ]
