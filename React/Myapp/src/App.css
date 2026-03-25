@@ -17,8 +17,27 @@
   }
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.parent{
+  text-align: center;
+}
+
+.mybut{
+  width: 50px;
+  height: 50px;
+}
+
 .hero {
   position: relative;
+  color:red;
 
   .base,
   .framework,
