@@ -1,11 +1,11 @@
-import MyFirstcompo from './My_firstcompo'
-import './App.css'
+import My_firstcompo from './My_firstcompo'
+
 
 function App(){
   return (
     <>
       <h1>Hello World!</h1>
-      <MyFirstcompo  />
+      <My_firstcompo  />
     </>
   );
 }
