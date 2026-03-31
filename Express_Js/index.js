@@ -11,8 +11,9 @@ app.use(function(req,res,next){
     next();
 })
 const routerRoot=require("./routes/routerroot");
-
+const UserRoute=require("./routes/UserRoute"); // Importing the UserRoute to register its routes with the app
 app.use("/",routerRoot);
+app.use("/user",UserRoute); // Using the UserRoute for user-related endpoints
 
 app.listen(3000,()=>{
     console.log("Server is running on port 3000");

@@ -1,39 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
-
-//Handling List in React using usestate hook
-
-
+//Handling List in React using usestate hooK
 function My_firstcompo(){
-  const [users, setUsers] = useState([
-  { id: 1, name: "John" },
-  { id: 2, name: "Jane" },
-  { id: 3, name: "Doe" }
-]);
+  const [users, setUsers] = useState([]);
+
+useEffect(()=>{
+    axios.get("http://localhost:3000/user")
+    .then(response=>response.data)
+    .then(data=>setUsers(data)
+    )
+},[]);
 
 
-function AddUser(name){
-  setUsers([...users, {id: users.length + 1, name: name}]);
+function AddUser(name, age){
+  axios.post("http://localhost:3000/user", {name, age})
+  .then(response=>response.data)
+  .then(data=> {
+    setUsers([...users, data]);
+  });
 }
 
-function DeleteUser(id){
-  setUsers(users.filter((u)=>u.id !== id));
+function DeleteUser(_id){
+  setUsers(users.filter((u)=>u._id !== _id));
   
 }
   return (
     <>
      <h1>This is First Component</h1>
-     <input type="text" placeholder="Enter the Name" onChange={(e)=>console.log(e.target.value)}/>
-     <button onClick={() => AddUser(document.querySelector("input").value)}>Add User</button>
+     <input type="text" placeholder="Enter the Name" onChange={(e)=>console.log(e.target.value)}/> <br></br>
+     <input type="text" placeholder="Enter the Age" onChange={(e)=>console.log(e.target.value)}/> <br></br>
+     <button onClick={() => AddUser(document.querySelector("input").value, document.querySelectorAll("input")[1].value)}>Add User</button>
       <ul>
         {users.map(user => (
           <div className="card" style={{ width: "18rem" }}>
   <div className="card-body">
     <h5 className="card-title">{user.name}</h5>
-    <h6 className="card-subtitle mb-2 text-body-secondary">{user.id}</h6>
+    <h6 className="card-subtitle mb-2 text-body-secondary">{user.age}</h6>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <button onClick={() => DeleteUser(user.id)}>Delete User</button>
+    <button onClick={() => DeleteUser(user._id)}>Delete User</button>
   </div>
 </div>
         ))}
