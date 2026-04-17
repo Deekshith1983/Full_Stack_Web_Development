@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f7fa;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .skill {
+            display: flex;
+            gap: 5px;
+            margin: 5px 0;
+        }
+
+        #tick {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2>
+            Profile Setup <span id="tick"></span>
+        </h2>
+
+        <input id="profname" placeholder="Name">
+        <input id="role" placeholder="Role">
+
+        <h4>Skills</h4>
+        <div id="skills"></div>
+        <button onclick="addSkill()">+ Add Skill</button>
+
+        <h4>GitHub</h4>
+        <input id="github" placeholder="https://github.com/username">
+        <button id="verifyBtn">Verify GitHub</button>
+
+        <button onclick="saveProfile()">Save Profile</button>
+
+    </div>
+
+    <script>
+        const tick = document.getElementById("tick");
+
+        // 🔹 Add skill input
+        function addSkill(val = "") {
+            const div = document.createElement("div");
+            div.className = "skill";
+            div.innerHTML = `<input value="${val}" placeholder="Skill">`;
+            document.getElementById("skills").appendChild(div);
+        }
+
+        // 🔹 SAVE ALL INPUTS TO sessionStorage
+        function saveToSession() {
+            const skills = [...document.querySelectorAll("#skills input")].map(i => i.value);
+
+            sessionStorage.setItem("profileData", JSON.stringify({
+                name: profname.value,
+                role: role.value,
+                skills,
+                github: github.value
+            }));
+        }
+
+        // 🔹 RESTORE AFTER RELOAD
+        function restoreFromSession() {
+            const data = JSON.parse(sessionStorage.getItem("profileData"));
+            if (!data) return;
+
+            profname.value = data.name || "";
+            role.value = data.role || "";
+            github.value = data.github || "";
+
+            document.getElementById("skills").innerHTML = "";
+            (data.skills || []).forEach(s => addSkill(s));
+        }
+
+        // 🔹 CLEAR SESSION DATA
+        function clearSessionData() {
+            sessionStorage.removeItem("profileData");
+            document.getElementById("profname").value = "";
+            document.getElementById("role").value = "";
+            document.getElementById("github").value = "";
+            document.getElementById("skills").innerHTML = "";
+        }
+
+        // 🔹 AUTO-SAVE ON INPUT CHANGE
+        function autoSave() {
+            saveToSession();
+        }
+
+        // 🔹 VERIFY GITHUB
+        document.getElementById("verifyBtn").onclick = async () => {
+            saveToSession();
+
+            await fetch(`/set-profile?profile=${encodeURIComponent(github.value)}`, {
+                credentials: "include"
+            });
+
+            window.location.href = "/auth/github?loaded=true";
+        };
+
+        // 🔹 AFTER CALLBACK
+        window.onload = async () => {
+            // 🔹 CHECK IF COMING FROM OAUTH REDIRECT OR MANUAL REFRESH
+            const urlParams = new URLSearchParams(window.location.search);
+            const isFromOAuth = urlParams.has("loaded");
+
+            if (isFromOAuth) {
+                // 🔹 COMING FROM OAUTH - RESTORE DATA
+                restoreFromSession();
+                // Remove the query param to keep URL clean
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } else {
+                // 🔹 MANUAL REFRESH - CLEAR DATA
+                clearSessionData();
+            }
+
+            // 🔹 AUTO-SAVE WHEN USER TYPES
+            document.getElementById("profname").addEventListener("input", autoSave);
+            document.getElementById("role").addEventListener("input", autoSave);
+            document.getElementById("github").addEventListener("input", autoSave);
+
+            // 🔹 AUTO-SAVE WHEN ADDING SKILLS
+            const observer = new MutationObserver(() => {
+                [...document.querySelectorAll("#skills input")].forEach(input => {
+                    input.removeEventListener("input", autoSave);
+                    input.addEventListener("input", autoSave);
+                });
+            });
+            observer.observe(document.getElementById("skills"), { childList: true });
+
+            const res = await fetch("/get-verification", { credentials: "include" });
+            const data = await res.json();
+
+            if (data.verified === true) {
+                tick.innerHTML = "✔️";
+
+                github.disabled = true;
+
+                document.getElementById("verifyBtn").innerText = "Verified";
+                document.getElementById("verifyBtn").disabled = true;
+            }
+        };
+
+        // 🔹 SAVE TO DB
+        async function saveProfile() {
+            const skills = [...document.querySelectorAll("#skills input")].map(i => i.value);
+
+            const res = await fetch("/save-profile", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: profname.value,
+                    role: role.value,
+                    skills,
+                    githubUser: github.value
+                })
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                sessionStorage.setItem("savedUser", JSON.stringify(data.user));
+                window.location.href = "/preview.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
