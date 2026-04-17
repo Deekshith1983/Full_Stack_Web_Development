@@ -11,7 +11,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const User = require("./models/User");
 
-mongoose.connect("mongodb+srv://dikideeku_db_user:HX5eqUGgslyqoJCZ@assign.cwktcsv.mongodb.net/ProfileDB?appName=Assign")
+mongoose.connect("your_mongodb_uri")
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log("Mongo Error:", err));
 
